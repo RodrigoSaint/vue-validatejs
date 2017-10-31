@@ -1,26 +1,32 @@
-# vue-validatejs
+## vue-validatejs
 
-> A validation component based on validate.js library
+This package is a validation component based on validate.js.
+It provides a simple and flexible way to validate and show error messages for individual properties. 
 
-<div style="text-align:center">
-  <img src="src/assets/vue.png" alt="vue" title="vue"/>
-</div>
+### Usage
 
-### Development Setup
+Because it relies on validate.js, all examples about validations can be checked at their docs.
+To use this component you have to import it into your component.
 
-```bash
-# install dependencies
-$ npm install
+```javascript
 
-# dev mode
-$ npm run dev
+  import VueValidate from 'vue-validate.js'
+  
+  export default {
+    name: 'App',
+    components: { VueValidate },
 
-# test
-$ npm run test
+    data () {
+      return { model: {}, validation: {name: {presence: {allowEmpty: false}}} }
+    }
+  }
 
-# build
-$ npm run build
 ```
 
+Then in your html create a tag passing the model, the property to validate and the validation
 
-**This project was generated with [yeoman](http://yeoman.io/) and [generator-vue-component](https://github.com/ianaya89/generator-vue-component) :heart:**
+```html
+<vue-validate :model="model" :validation="validation" property-name="name"></vue-validate>
+```
+
+And that's it. A error message will be generated if the field fail any validation.
