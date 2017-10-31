@@ -10,7 +10,7 @@ To use this component you have to import it into your component.
 
 ```javascript
 
-  import VueValidate from 'vue-validate.js'
+  import VueValidate from 'vue-validatejs'
   
   export default {
     name: 'App',
