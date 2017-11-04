@@ -19,7 +19,7 @@ export default
     props: ['propertyName', 'model', 'validation', 'validateConfig'],
     created: function () 
     {
-        if(this.validateConfig) this.validateConfig();
+        if(this.validateConfig) this.validateConfig(validate);
     },
     computed: 
     {
