@@ -16,7 +16,11 @@ function reduceObject(property, input)
 
 export default 
 {
-    props: ['propertyName', 'model', 'validation'],
+    props: ['propertyName', 'model', 'validation', 'validateConfig'],
+    created: function () 
+    {
+        if(this.validateConfig) this.validateConfig();
+    },
     computed: 
     {
         errorMessageCollection ()

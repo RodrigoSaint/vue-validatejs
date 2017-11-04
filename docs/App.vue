@@ -1,7 +1,8 @@
 <template>
   <div class="docs">
     <input type="text" v-model="model.name" placeholder="Name">
-    <vue-validate :model="model" :validation="validation" property-name="name"></vue-validate>
+    <vue-validate :model="model" :validation="validation" 
+      property-name="name" :validateConfig="validateConfig"></vue-validate>
   </div>
 </template>
 
@@ -13,7 +14,13 @@
     components: { VueValidate },
 
     data () {
-      return { model: {}, validation: {name: {presence: {allowEmpty: false}}} }
+      return { 
+        model: {}, 
+        validation: {name: {presence: {allowEmpty: false}}},
+        validateConfig: function () 
+        {
+            console.log('validate me')
+        }}
     }
   }
 </script>
